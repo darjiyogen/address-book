@@ -16,6 +16,7 @@ export class ContactListComponent implements OnInit {
     // Refresh list
     this.contactService.getRefresh().subscribe(()=>{
       this.getContacts();
+      this.search = '';
     });
     // Set selected contact as active one
     this.contactService.getActiveContact().subscribe((contact) => {
