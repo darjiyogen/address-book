@@ -22,6 +22,8 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## Future Scope
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* Unit test and end to end test cases need to be added.
+* When a user removes an email id from the contact, verify that they want to remove it by showing a pop up.
+* Add some validation on First Name and Last Name e.g, do not allow special characters and given some restriction on the maximum length of these fields 
