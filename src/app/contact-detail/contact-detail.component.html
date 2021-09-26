@@ -43,8 +43,8 @@
         <div class="row">
           <div class="email my-1">
             {{ email }}
-            <mat-icon aria-hidden="false" (click)="onDeleteEmail(i)"
-              >delete</mat-icon
+            <mat-icon aria-hidden="false"  matTooltip="Remove email" (click)="onDeleteEmail(i)"
+              >remove_circle</mat-icon
             >
           </div>
         </div>
@@ -53,19 +53,18 @@
         <form class="row" id="emailForm" name="emailForm" #emailForm="ngForm">
           <mat-form-field class="col-md-6" appearance="fill">
             <mat-label>Email</mat-label>
+          
             <input
               matInput
               id="newEmailId"
               name="newEmailId"
               #newEmailId="ngModel"
               pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
-              required
               [(ngModel)]="newEmail"
             />
-            <mat-error *ngIf="newEmailId.errors?.required">
-              Email is required.
-            </mat-error>
-            <mat-error *ngIf="newEmailId.errors && !newEmailId.errors?.required">
+            <mat-error
+              *ngIf="newEmailId.errors && !newEmailId.errors?.required"
+            >
               Please enter a valid email address
             </mat-error>
           </mat-form-field>
@@ -76,7 +75,7 @@
               mat-raised-button
               color="primary"
               (click)="onAddEmail()"
-              class="add-email"
+              class="add-email primary"
             >
               Add Email
             </button>
@@ -92,7 +91,7 @@
         mat-raised-button
         color="primary"
         (click)="onSaveContact()"
-        class="save"
+        class="save primary"
       >
         Save Contact
       </button>

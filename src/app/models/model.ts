@@ -3,4 +3,5 @@ export interface Contact {
     firstName: string;
     lastName: string;
     emails: Array<string>;
+    favorite: Boolean;
 }

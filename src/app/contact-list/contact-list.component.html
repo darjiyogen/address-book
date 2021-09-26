@@ -10,7 +10,11 @@
       (click)="onClickContact(contact)"
     >
       <div class="contact-name p-2">
-        <div class="px-2">{{ contact.firstName}} {{contact.lastName}}</div>
+        <div class="px-2">{{ contact.firstName }} {{ contact.lastName }}</div>
+        <div class="favorite-icons">
+          <mat-icon *ngIf="!contact.favorite" (click)="onContactFavorite(contact, true);$event.stopPropagation()">favorite_border</mat-icon>
+          <mat-icon *ngIf="contact.favorite" class="favorite" (click)="onContactFavorite(contact, false);$event.stopPropagation()">favorite</mat-icon>
+        </div>
       </div>
     </div>
   </div>

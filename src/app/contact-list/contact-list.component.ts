@@ -42,4 +42,9 @@ export class ContactListComponent implements OnInit {
     this.selectedContact = contact;
     this.contactService.setActiveContact(contact);
   }
+
+  // Set contact favorite field
+  onContactFavorite(contact: Contact, isFavorite: boolean){
+    this.contactService.put(contact, {...contact, favorite: isFavorite});
+  }
 }

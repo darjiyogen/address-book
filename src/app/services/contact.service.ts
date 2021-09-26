@@ -37,7 +37,8 @@ export class ContactService {
           x.firstName.toLowerCase().includes(name) ||
           x.lastName.toLowerCase().includes(name)
       )
-      .sort((a, b) => a.firstName.localeCompare(b.firstName));
+      .sort((a, b) => a.firstName.localeCompare(b.firstName))
+      .sort((a, b) => Number(b.favorite) - Number(a.favorite));
   }
 
   // Update contact
@@ -80,6 +81,7 @@ export class ContactService {
       firstName: '',
       lastName: '',
       emails: [],
+      favorite: false
     } as Contact);
   }
 
