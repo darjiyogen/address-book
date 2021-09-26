@@ -1,0 +1,17 @@
+<div>
+  <mat-form-field class="example-full-width px-3 m-0" appearance="fill">
+    <mat-label>Search</mat-label>
+    <input matInput [(ngModel)]="search" (input)="onFilterContact()" />
+  </mat-form-field>
+  <div class="contact-wrapper">
+    <div
+      *ngFor="let contact of contactList"
+      [class.selected]="contact === selectedContact"
+      (click)="onClickContact(contact)"
+    >
+      <div class="contact-name p-2">
+        <div class="px-2">{{ contact.firstName}} {{contact.lastName}}</div>
+      </div>
+    </div>
+  </div>
+</div>

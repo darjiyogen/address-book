@@ -1,0 +1,54 @@
+@import './../../variables.scss';
+
+
+h3{
+    color:  #999999;
+}
+
+.contact-wrapper{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    .contact-form{
+        width: 70%;
+        justify-content: normal;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        .email{
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+
+            mat-icon{
+                padding-left: 15px;
+                visibility: hidden;
+                float: right;
+            }
+        }
+
+        .email:hover mat-icon {
+            visibility: visible;
+        }
+
+       
+    }
+
+    .contact-footer{
+        .btns{
+            display: flex;
+
+            .delete{
+                margin-left: auto;
+            }
+        }
+
+    }
+
+    .add-email:not(.mat-button-disabled), .save:not(.mat-button-disabled){
+        background: $base-btn-color
+    }
+}

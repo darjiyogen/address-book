@@ -1,0 +1,101 @@
+<div class="contact-wrapper">
+  <div class="my-5 contact-form">
+    <form id="contactForm" name="contactForm" #contactForm="ngForm">
+      <div class="row px-5">
+        <mat-form-field class="col-md-6" appearance="fill">
+          <mat-label>First Name</mat-label>
+          <input
+            name="firstName"
+            matInput
+            required
+            [(ngModel)]="contact.firstName"
+          />
+        </mat-form-field>
+        <mat-form-field class="col-md-6" appearance="fill">
+          <mat-label>Last Name</mat-label>
+          <input
+            name="lastName"
+            matInput
+            required
+            [(ngModel)]="contact.lastName"
+          />
+        </mat-form-field>
+      </div>
+    </form>
+    <div class="row px-5">
+      <div class="col-md-12">
+        <h3>Emails</h3>
+      </div>
+      <div
+        class="col-md-12"
+        *ngFor="let email of contact.emails; let i = index"
+      >
+        <div class="row">
+          <div class="email my-1">
+            {{ email }}
+            <mat-icon aria-hidden="false" (click)="onDeleteEmail(i)"
+              >delete</mat-icon
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 my-3">
+        <form class="row" id="emailForm" name="emailForm" #emailForm="ngForm">
+          <mat-form-field class="col-md-6" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              id="newEmailId"
+              name="newEmailId"
+              #newEmailId="ngModel"
+              pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+              required
+              [(ngModel)]="newEmail"
+            />
+          </mat-form-field>
+
+          <div class="col-md-4">
+            <button
+              [disabled]="!emailForm.form.valid"
+              mat-raised-button
+              color="primary"
+              (click)="onAddEmail()"
+              class="add-email"
+            >
+              Add Email
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="row px-5 contact-footer">
+    <div class="btns">
+      <button
+        [disabled]="!contactForm.form.valid"
+        mat-raised-button
+        color="primary"
+        (click)="onSaveContact()"
+        class="save"
+      >
+        Save Contact
+      </button>
+      <button
+        mat-stroked-button
+        (click)="onCancelContact()"
+        class="cancel mx-3"
+      >
+        Cancel
+      </button>
+      <button
+      [disabled]="!contact.id"
+        mat-stroked-button
+        color="warn"
+        (click)="onDeleteContact()"
+        class="delete"
+      >
+        Delete Contact
+      </button>
+    </div>
+  </div>
+</div>

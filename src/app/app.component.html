@@ -1,0 +1,19 @@
+<div class="container-fluid g-0">
+  <div class="row g-0">
+    <div class="col-md-2 pt-3 sidebar">
+      <h1 class="header p-3 m-0">
+        Contacts
+        <mat-icon
+          aria-hidden="false"
+          (click)="onAddClick()"
+          aria-label="Add Contact"
+          >add_circle</mat-icon
+        >
+      </h1>
+      <app-contact-list></app-contact-list>
+    </div>
+    <div class="col-md-10 p-3 detail">
+      <app-contact-detail></app-contact-detail>
+    </div>
+  </div>
+</div>
