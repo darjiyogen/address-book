@@ -63,7 +63,7 @@
               [(ngModel)]="newEmail"
             />
             <mat-error
-              *ngIf="newEmailId.errors && !newEmailId.errors?.required"
+              *ngIf="newEmailId.errors"
             >
               Please enter a valid email address
             </mat-error>
@@ -71,7 +71,7 @@
 
           <div class="col-md-4">
             <button
-              [disabled]="!emailForm.form.valid"
+              [disabled]="!emailForm.form.valid || newEmail.length == 0"
               mat-raised-button
               color="primary"
               (click)="onAddEmail()"

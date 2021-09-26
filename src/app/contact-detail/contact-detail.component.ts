@@ -21,7 +21,8 @@ export class ContactDetailComponent implements OnInit {
     emails: [],
     favorite: false,
   } as Contact;
-  public newEmail?: string;
+
+  public newEmail: string = '';
 
   constructor(private contactService: ContactService, private dialog: MatDialog) {
     // When click on contact from sidebar set detail page
@@ -49,6 +50,7 @@ export class ContactDetailComponent implements OnInit {
     this.contactService.resetSelection();
     this.contactForm?.resetForm();
     this.emailForm?.resetForm();
+    this.newEmail = '';
   }
 
   // Delete contact
@@ -76,8 +78,8 @@ export class ContactDetailComponent implements OnInit {
   onAddEmail() {
     if (!this.contact.emails) this.contact.emails = [];
     this.contact.emails.push(this.newEmail || '');
-    this.newEmail = '';
     this.emailForm?.resetForm();
+    this.newEmail = '';
   }
 
   // Delete email
