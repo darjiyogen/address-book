@@ -1,7 +1,8 @@
 <div>
-  <mat-form-field class="example-full-width px-3 m-0" appearance="fill">
+  <mat-form-field appearance="outline" class="search m-0">
     <mat-label>Search</mat-label>
     <input matInput [(ngModel)]="search" (input)="onFilterContact()" />
+    <mat-icon matSuffix >search</mat-icon>
   </mat-form-field>
   <div class="contact-wrapper">
     <div

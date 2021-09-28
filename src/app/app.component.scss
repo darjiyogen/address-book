@@ -10,11 +10,12 @@
     .header{
         display: flex;
         align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
         font-size: 36px;
         font-weight: 400;
 
         mat-icon{
-            padding-left: 20px;
             cursor: pointer;
             color: $base-btn-color;
         }

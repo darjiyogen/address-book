@@ -2,7 +2,7 @@
   <div class="my-5 contact-form">
     <form id="contactForm" name="contactForm" #contactForm="ngForm">
       <div class="row px-5">
-        <mat-form-field class="col-md-6" appearance="fill">
+        <mat-form-field class="col-md-6" appearance="outline">
           <mat-label>First Name</mat-label>
           <input
             id="firstName"
@@ -16,7 +16,7 @@
             First name is required.
           </mat-error>
         </mat-form-field>
-        <mat-form-field class="col-md-6" appearance="fill">
+        <mat-form-field class="col-md-6" appearance="outline">
           <mat-label>Last Name</mat-label>
           <input
             name="lastName"
@@ -51,7 +51,7 @@
       </div>
       <div class="col-md-12 my-3">
         <form class="row" id="emailForm" name="emailForm" #emailForm="ngForm">
-          <mat-form-field class="col-md-6" appearance="fill">
+          <mat-form-field class="col-md-6" appearance="outline">
             <mat-label>Email</mat-label>
           
             <input
@@ -69,7 +69,7 @@
             </mat-error>
           </mat-form-field>
 
-          <div class="col-md-4">
+          <div class="add-email-wrapper col-md-4">
             <button
               [disabled]="!emailForm.form.valid || newEmail.length == 0"
               mat-raised-button
@@ -77,7 +77,7 @@
               (click)="onAddEmail()"
               class="add-email primary"
             >
-              Add Email
+              Add email
             </button>
           </div>
         </form>

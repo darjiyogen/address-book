@@ -17,3 +17,7 @@ $base-btn-color: #7797C8;
 .primary:not(.mat-button-disabled){
   background: $base-btn-color
 }
+
+.mat-form-field-outline, .mat-form-field-outline.mat-focused {
+  background-color: white;
+}
